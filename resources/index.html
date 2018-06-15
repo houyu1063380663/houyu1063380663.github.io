@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="*{margin:0; padding: 0;} 	/*上部导航栏*/ 	.nav_box{  		width: 100%; 		height: 35px; 		/*border: 1px solid #ccc;*/ 	} 	.nav_box ul{ 		display: flex; 		/*justify-content: space-between;*/ 		justify">
+<meta name="description" content="*{margin:0; padding: 0;} 	/*上部导航栏*/ 	.nav_box{  		width: 100%; 		height: 35px; 		/*border: 1px solid #ccc;*/ 	} 	.nav_box .w_nav{ 		display: flex; 		/*justify-content: space-between;*/ 		jus">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/resources/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="*{margin:0; padding: 0;} 	/*上部导航栏*/ 	.nav_box{  		width: 100%; 		height: 35px; 		/*border: 1px solid #ccc;*/ 	} 	.nav_box ul{ 		display: flex; 		/*justify-content: space-between;*/ 		justify">
+<meta property="og:description" content="*{margin:0; padding: 0;} 	/*上部导航栏*/ 	.nav_box{  		width: 100%; 		height: 35px; 		/*border: 1px solid #ccc;*/ 	} 	.nav_box .w_nav{ 		display: flex; 		/*justify-content: space-between;*/ 		jus">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/resources/images/logo.png">
-<meta property="og:updated_time" content="2018-06-14T15:26:30.913Z">
+<meta property="og:updated_time" content="2018-06-15T03:29:43.369Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="*{margin:0; padding: 0;} 	/*上部导航栏*/ 	.nav_box{  		width: 100%; 		height: 35px; 		/*border: 1px solid #ccc;*/ 	} 	.nav_box ul{ 		display: flex; 		/*justify-content: space-between;*/ 		justify">
+<meta name="twitter:description" content="*{margin:0; padding: 0;} 	/*上部导航栏*/ 	.nav_box{  		width: 100%; 		height: 35px; 		/*border: 1px solid #ccc;*/ 	} 	.nav_box .w_nav{ 		display: flex; 		/*justify-content: space-between;*/ 		jus">
 <meta name="twitter:image" content="http://yoursite.com/resources/images/logo.png">
 
 
@@ -323,13 +323,13 @@
 		height: 35px;
 		/*border: 1px solid #ccc;*/
 	}
-	.nav_box ul{
+	.nav_box .w_nav{
 		display: flex;
 		/*justify-content: space-between;*/
 		justify-content: center;
 	}
-	.nav_box ul li{
-		display: inline-block;
+	.nav_box .w_nav li{
+		/*display: none;*/
 		list-style: none;
 		width: 130px;
 		background:#ccc;
@@ -339,9 +339,14 @@
 		font-weight: bold;
 		transition: 1s;
 		cursor: pointer;
+		min-width: 120px;
+
 		
 	}
-	.nav_box ul li:hover{
+/*	@media(max-width: 960px){
+
+	}*/
+	.nav_box .w_nav li:hover{
 		transform:rotate(360deg);
 		-ms-transform:rotate(360deg); 	/* IE 9 */
 		-moz-transform:rotate(360deg); 	/* Firefox */
@@ -372,9 +377,9 @@
 	.content_box h3{
 		display: inline-block;
 		width: 100%;
-		height: 30px;
+		height: 70px;
 		background: #ccc;
-		line-height: 30px;
+		line-height: 70px;
 		text-indent:10px;
 		font-size: 25px;
 	}
@@ -389,14 +394,12 @@
 
 	}
 	.left_nav ul{
-		margin-top: 5px;
 		width: 100%;
 		height: 100%;
 		list-style: none;
 		/*background: pink;*/
 	}
 	.left_nav ul li {
-
      	background-color: ;
      	line-height: 50px;
      	border-bottom: 2px solid orange;
@@ -422,11 +425,9 @@
 	.content_top{
 		width: 100%;
 		height: 85px;
-		border: 1px solid red;
+		/*border: 1px solid red;*/
 	}
 	.content_top img{
-		position: absolute;
-		left: 0px;
 		display: inline;
 		width: 110px;
 		height: 80px;
@@ -440,44 +441,52 @@
 		-webkit-transform:rotate(360deg); /* Safari 和 Chrome */
 		-o-transform:rotate(360deg); 
 	}
-	.content_top  .content_txt{
-		position: absolute;
-		right: 20%;
-		display: inline;
-		width: 20%;
-		height: 35px;
-		font-size: 20px;
-		background:#ddd;
-		border-radius: 30px;
-		top: 20px;
-		transition: 1s;
+
+	/*响应式布局*/
+	.x_nav{
+		display: none;
+		width: 40px;
+		height: 40px;
+		border: 1px solid red;
+		margin-left: 5px;
 	}
-	.content_top  .content_txt:hover{
-		border-radius: 0px;
-		width: 30%;
+	.x_nav ul{
+		width: 100%;
+		list-style: none;
 	}
-	.content_top .content_sub{
-		position: absolute;
-		right: 19%;
-		top: 20px;
-		width: 10%;
-		height: 38px;
-		background-color: #ddd;
-		font-size: 20px;
-		border-radius: 10px;
+	.x_nav .x_one li {
+
+		width: 40px;
+		height: 40px;
+		background: url("images/1.png") 0px -80px;
+		cursor: pointer;
+	}
+	@media(max-width: 650px){
+		.nav_box .w_nav li{display: none;}
+		.nav_box  .x_nav {display: block;}
+		.left_nav{display: none;}
+		.right_content{position: absolute;
+						top: 25px;
+						left: 15%;}
+
 	}
 	</style>
 </head>
 <body>
 	<!-- 上部导航栏 -->
 	<div class="nav_box">
-		<ul>
+		<ul class="w_nav">
 			<li>首页</li>
 			<li>宠物新知</li>
 			<li>宠物乐园</li>
 			<li>宠物pic</li>
 			<li>VIP登陆界面</li>
 		</ul>
+		<div class="x_nav"><!-- 响应式出现上部导航 -->
+			<ul class="x_one">
+				<li></li>
+			</ul>
+		</div><!-- 响应式出现上部导航 -->
 	</div>
 
 	<!-- content -->
@@ -496,8 +505,7 @@
 		<div class="right_content"><!-- 右侧内容盒子 -->
 			<div class="content_top"><!-- 有盒子头部 -->
 				<img src="images/logo.png">
-				<input class="content_txt" type="text" name="text" placeholder="搜索....">
-				<input class="content_sub" type="submit" name="submit" value="OK">
+				
 			</div><!-- 有盒子头部 -->
 		</div><!-- 右侧内容盒子 -->
 	</div>
